@@ -63,6 +63,9 @@
 		<?php if(isset($_SESSION['userId']) && $_SESSION['userId']==1) { ?>
         <li id="navCategories"><a href="categories.php"> <i class="glyphicon glyphicon-th-list"></i> Category</a></li>        
 		<?php } ?>
+    <?php if(isset($_SESSION['userId']) && $_SESSION['userId']==1) { ?>
+        <li id="navStock"><a href="stock.php"> <i class="glyphicon glyphicon-ruble"></i> Stocks </a></li> 
+		<?php } ?>
 		<?php if(isset($_SESSION['userId']) && $_SESSION['userId']==1) { ?>
         <li id="navProduct"><a href="product.php"> <i class="glyphicon glyphicon-ruble"></i> Product </a></li> 
 		<?php } ?>
