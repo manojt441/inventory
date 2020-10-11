@@ -523,12 +523,13 @@ function getProductData(row = null) {
 					{
 						var total = Number(response.rate) * 1;
 					total = total.toFixed(2);
-					$("#total"+row).val(total);
-					$("#totalValue"+row).val(total);
+					// $("#total"+row).val(total);
+					// $("#totalValue"+row).val(total);
 						
 					}else{
 					
 						alert("Out of Stock");
+						$("#quantity"+row).val("");
 					}
 					
 
@@ -575,6 +576,7 @@ function getTotal(row = null) {
 		total = total.toFixed(2);
 		$("#total"+row).val(total);
 		$("#totalValue"+row).val(total);
+		console.log("total"+total+" "+row);
 		
 		subAmount();
 
@@ -612,9 +614,9 @@ function subAmount() {
 	$("#totalAmount").val(totalAmount);
 	$("#totalAmountValue").val(totalAmount);
 
-	var discount = $("#discount").val();
+	var discount = Number($("#discount").val()) / 100;
 	if(discount) {
-		var grandTotal = Number($("#totalAmount").val()) - Number(discount);
+		var grandTotal = Number($("#totalAmount").val()) - (Number($("#totalAmount").val()) * Number(discount));
 		grandTotal = grandTotal.toFixed(2);
 		$("#grandTotal").val(grandTotal);
 		$("#grandTotalValue").val(grandTotal);
@@ -643,7 +645,7 @@ function discountFunc() {
 
  	var grandTotal;
  	if(totalAmount) { 	
- 		grandTotal = Number($("#totalAmount").val()) - Number($("#discount").val());
+ 		grandTotal = Number($("#totalAmount").val()) - (Number($("#totalAmount").val()) * (Number($("#discount").val()) / 100) );
  		grandTotal = grandTotal.toFixed(2);
 
  		$("#grandTotal").val(grandTotal);

@@ -123,7 +123,7 @@ if($_GET['o'] == 'add') {
 			  				</td>
 							<td style="padding-left:20px;">
 			  					
-									<pinput Type="text" name="available_quantity[]" id="available_quantity<?php echo $x; ?>" autocomplete="off" disabled="true" class="form-control" />
+									<input Type="text" name="available_quantity[]" id="available_quantity<?php echo $x; ?>" autocomplete="off" disabled="true" class="form-control" />
 									<input Type="hidden" name="available_quantity[]" id="available_quantity<?php echo $x; ?>" autocomplete="off" disabled="true" class="form-control" />
 			  					
 			  				</td>
@@ -165,7 +165,7 @@ if($_GET['o'] == 'add') {
 				    </div>
 				  </div> <!--/form-group-->			  
 				  <div class="form-group">
-				    <label for="discount" class="col-sm-3 control-label">Discount</label>
+				    <label for="discount" class="col-sm-3 control-label">Discount in %</label>
 				    <div class="col-sm-9">
 				      <input type="text" class="form-control" id="discount" name="discount" onkeyup="discountFunc()" autocomplete="off" />
 				    </div>
