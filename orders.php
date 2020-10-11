@@ -70,17 +70,23 @@ if($_GET['o'] == 'add') {
 			    </div>
 			  </div> <!--/form-group-->
 			  <div class="form-group">
-			    <label for="clientName" class="col-sm-2 control-label">Client Name</label>
+				<label for="clientName" class="col-sm-2 control-label">Choose Vender:</label>
+				<div class="col-sm-10">
+				<select class="form-control" id="clientName" name="clientName">
+					<option>SELECT</option>
+					<option value="SWIGGY">SWIGGY</option>
+					<option value="UBER EATS">UBER EATS</option>
+					<option value="COUNTER">CONTER</option>
+				</select>
+				</div>
+				</div> 
+			   <div class="form-group">
+			    <label for="clientContact" class="col-sm-2 control-label">Client Name</label>
 			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="clientName" name="clientName" placeholder="Client Name" autocomplete="off" />
+			      <input type="text" class="form-control" id="clientContact" name="clientContact" placeholder="Client Name" autocomplete="off" />
 			    </div>
-			  </div> <!--/form-group-->
-			  <div class="form-group">
-			    <label for="clientContact" class="col-sm-2 control-label">Client Contact</label>
-			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="clientContact" name="clientContact" placeholder="Contact Number" autocomplete="off" />
-			    </div>
-			  </div> <!--/form-group-->			  
+			  </div>  
+			   <!--/form-group-->			  
 
 			  <table class="table" id="productTable">
 			  	<thead>
