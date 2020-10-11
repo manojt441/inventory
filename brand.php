@@ -49,7 +49,18 @@
 	      <div class="modal-body">
 
 	      	<div id="add-brand-messages"></div>
-
+			  <div class="form-group">
+	        	<label for="productImage" class="col-sm-3 control-label">Brand Image: </label>
+	        	<label class="col-sm-1 control-label">: </label>
+				    <div class="col-sm-8">
+					    <!-- the avatar markup -->
+							<div id="kv-avatar-errors-1" class="center-block" style="display:none;"></div>							
+					    <div class="kv-avatar center-block">					        
+					        <input type="file" class="form-control" id="brandImage" placeholder="Brand Name" name="brandImage" class="file-loading" style="width:auto;"/>
+					    </div>
+				      
+				    </div>
+	        </div> <!-- /form-group-->
 	        <div class="form-group">
 	        	<label for="brandName" class="col-sm-3 control-label">Brand Name: </label>
 	        	<label class="col-sm-1 control-label">: </label>
