@@ -115,14 +115,17 @@ if($_GET['o'] == 'add') {
 		  						</select>
 			  					</div>
 			  				</td>
-			  				<td style="padding-left:20px;">			  					
+			  				<td style="padding-left:20px;">		
+							   					
 			  					<input type="text" name="rate[]" id="rate<?php echo $x; ?>" autocomplete="off" disabled="true" class="form-control" />			  					
-			  					<input type="hidden" name="rateValue[]" id="rateValue<?php echo $x; ?>" autocomplete="off" class="form-control" />			  					
+			  					<input type="hidden" name="rateValue[]" id="rateValue<?php echo $x; ?>" autocomplete="off" class="form-control" />	
+							  
 			  				</td>
 							<td style="padding-left:20px;">
-			  					<div class="form-group">
-									<p id="available_quantity<?php echo $x; ?>"></p>
-			  					</div>
+			  					
+									<pinput Type="text" name="available_quantity[]" id="available_quantity<?php echo $x; ?>" autocomplete="off" disabled="true" class="form-control" />
+									<input Type="hidden" name="available_quantity[]" id="available_quantity<?php echo $x; ?>" autocomplete="off" disabled="true" class="form-control" />
+			  					
 			  				</td>
 			  				<td style="padding-left:20px;">
 			  					<div class="form-group">
