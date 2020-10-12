@@ -505,7 +505,7 @@ function getProductData(row = null) {
                         $("#rate" + row).val(response.rate);
                         $("#rateValue" + row).val(response.rate);
 
-                        $("#quantity" + row).val(1);
+                        $("#quantity" + row).val();
 
                         $("#available_quantity" + row).val(response.quantity);
                         // console.log($("#available_quantity"+row).val(response.quantity));
@@ -523,7 +523,7 @@ function getProductData(row = null) {
 
                             } else {
 
-                                alert("you only have " + response.quantity + "" + " quantitites " + "left");
+                                alert("You only have " + response.quantity + "" + " quantitites " + "left");
                                 $("#quantity" + row).val("");
                             }
 
