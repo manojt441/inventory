@@ -70,13 +70,18 @@ if($_GET['o'] == 'add') {
 			    </div>
 			  </div> <!--/form-group-->
 			  <div class="form-group">
-				<label for="clientName" class="col-sm-2 control-label">Choose Vender:</label>
+				<label for="clientName" class="col-sm-2 control-label">Order Through:</label>
 				<div class="col-sm-10">
 				<select class="form-control" id="clientName" name="clientName">
 					<option>SELECT</option>
 					<option value="SWIGGY">SWIGGY</option>
-					<option value="UBER EATS">UBER EATS</option>
-					<option value="COUNTER">CONTER</option>
+					<option value="ZOMATO">ZOMATO</option>
+					<option value="FOODPANDA">FOODPANDA</option>
+					<option value="COUNTER">ON COUNTER</option>
+					<option value="PARCEL">PARCEL</option>
+					<option value="OTHER">OTHER</option>
+
+
 				</select>
 				</div>
 				</div> 
@@ -269,8 +274,8 @@ if($_GET['o'] == 'add') {
 					<tr>
 						<th>#</th>
 						<th>Order Date</th>
-						<th>Client Name</th>
-						<th>Contact</th>
+						<th>Order Through</th>
+						<th>Customer Name</th>
 						<th>Total Order Item</th>
 						<th>Payment Status</th>
 						<th>Option</th>
