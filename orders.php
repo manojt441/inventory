@@ -70,7 +70,7 @@ if($_GET['o'] == 'add') {
 			    </div>
 			  </div> <!--/form-group-->
 			  <div class="form-group">
-			    <label for="clientName" class="col-sm-2 control-label">Client Name</label>
+			    <label for="clientName" class="col-sm-2 control-label">Customer Name</label>
 			    <div class="col-sm-10">
 			      <input type="text" class="form-control" id="clientName" name="clientName" placeholder="Client Name" autocomplete="off" />
 			    </div>

@@ -10,7 +10,7 @@ $orderSql = "SELECT * FROM orders WHERE order_status = 1";
 $orderQuery = $connect->query($orderSql);
 $countOrder = $orderQuery->num_rows;
 
-$totalRevenue = "";
+$totalRevenue = 0;
 while ($orderResult = $orderQuery->fetch_assoc()) {
 	$totalRevenue += $orderResult['paid'];
 }
@@ -18,6 +18,12 @@ while ($orderResult = $orderQuery->fetch_assoc()) {
 $lowStockSql = "SELECT * FROM product WHERE quantity <= 3 AND status = 1";
 $lowStockQuery = $connect->query($lowStockSql);
 $countLowStock = $lowStockQuery->num_rows;
+
+
+$lowStockSqlNew="SELECT * FROM stock WHERE quantity <= threshold AND status=1"; 
+
+$lowStockQueryNew = $connect->query($lowStockSqlNew);
+$countLowStockNew = $lowStockQueryNew->num_rows;
 
 $userwisesql = "SELECT users.username , SUM(orders.grand_total) as totalorder FROM orders INNER JOIN users ON orders.user_id = users.user_id WHERE orders.order_status = 1 GROUP BY orders.user_id";
 $userwiseQuery = $connect->query($userwisesql);
@@ -41,7 +47,7 @@ $connect->close();
 
 <div class="row">
 	<?php  if(isset($_SESSION['userId']) && $_SESSION['userId']==1) { ?>
-	<div class="col-md-4">
+	<div class="col-md-3">
 		<div class="panel panel-success">
 			<div class="panel-heading">
 				
@@ -54,11 +60,11 @@ $connect->close();
 		</div> <!--/panel-->
 	</div> <!--/col-md-4-->
 	
-	<div class="col-md-4">
+	<div class="col-md-3">
 		<div class="panel panel-danger">
 			<div class="panel-heading">
 				<a href="product.php" style="text-decoration:none;color:black;">
-					Low Stock
+					Low Product Stock
 					<span class="badge pull pull-right"><?php echo $countLowStock; ?></span>	
 				</a>
 				
@@ -68,7 +74,19 @@ $connect->close();
 	
 	
 	<?php } ?>  
-		<div class="col-md-4">
+		<div class="col-md-3">
+			<div class="panel panel-danger">
+			<div class="panel-heading">
+				<a href="orders.php?o=manord" style="text-decoration:none;color:black;">
+					Low Raw material Quantity
+					<span class="badge pull pull-right"><?php echo $countLowStockNew; ?></span>
+				</a>
+					
+			</div> <!--/panel-hdeaing-->
+		</div> <!--/panel-->
+		</div> <!--/col-md-4-->
+
+		<div class="col-md-3">
 			<div class="panel panel-info">
 			<div class="panel-heading">
 				<a href="orders.php?o=manord" style="text-decoration:none;color:black;">
