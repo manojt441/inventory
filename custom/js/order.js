@@ -431,9 +431,8 @@ function addRow() {
 					'<input type="hidden" name="rateValue[]" id="rateValue'+count+'" autocomplete="off" class="form-control" />'+
 				'</td style="padding-left:20px;">'+
 				'<td style="padding-left:20px;">'+
-					'<div class="form-group">'+
-					'<p id="available_quantity'+count+'"></p>'+
-					'</div>'+
+					'<pinput Type="text" name="available_quantity[]" id="available_quantity'+count+'" disabled="true" class="form-control" />'+
+					'<input Type="hidden" name="available_quantity[]" id="available_quantity<?php echo $x; ?>" '+count+' autocomplete="off" disabled="true" class="form-control" />'+
 				'</td>'+
 				'<td style="padding-left:20px;">'+
 					'<div class="form-group">'+
@@ -509,13 +508,39 @@ function getProductData(row = null) {
 					$("#rate"+row).val(response.rate);
 					$("#rateValue"+row).val(response.rate);
 
-					$("#quantity"+row).val(1);
+				//  $("#quantity"+row).val(1);
+					
+					// $("#available_quantity"+row).val(response.quantity);
+					// console.log($("#available_quantity"+row).val(response.quantity));
+
+				$("#quantity"+row).on('keyup',function(){
+
+
+					var in_q=$("#quantity"+row).val();
+						// console.log(  in_q+" "+Number(response.quantity) );	
+					if( Number(in_q) <= Number(response.quantity) )
+					{
+						var total = Number(response.rate) * 1;
+					total = total.toFixed(2);
+					// $("#total"+row).val(total);
+					// $("#totalValue"+row).val(total);
+						
+					}else{
+					
+						alert("Out of Stock");
+						$("#quantity"+row).val("");
+					}
+					
+
+				
+				});
+					
 					$("#available_quantity"+row).text(response.quantity);
 
-					var total = Number(response.rate) * 1;
-					total = total.toFixed(2);
-					$("#total"+row).val(total);
-					$("#totalValue"+row).val(total);
+					// var total = Number(response.rate) * 1;
+					// total = total.toFixed(2);
+					// $("#total"+row).val(total);
+					// $("#totalValue"+row).val(total);
 					
 					// check if product name is selected
 					// var tableProductLength = $("#productTable tbody tr").length;					
@@ -550,6 +575,7 @@ function getTotal(row = null) {
 		total = total.toFixed(2);
 		$("#total"+row).val(total);
 		$("#totalValue"+row).val(total);
+		console.log("total"+total+" "+row);
 		
 		subAmount();
 
@@ -587,9 +613,9 @@ function subAmount() {
 	$("#totalAmount").val(totalAmount);
 	$("#totalAmountValue").val(totalAmount);
 
-	var discount = $("#discount").val();
+	var discount = Number($("#discount").val()) / 100;
 	if(discount) {
-		var grandTotal = Number($("#totalAmount").val()) - Number(discount);
+		var grandTotal = Number($("#totalAmount").val()) - (Number($("#totalAmount").val()) * Number(discount));
 		grandTotal = grandTotal.toFixed(2);
 		$("#grandTotal").val(grandTotal);
 		$("#grandTotalValue").val(grandTotal);
@@ -618,7 +644,7 @@ function discountFunc() {
 
  	var grandTotal;
  	if(totalAmount) { 	
- 		grandTotal = Number($("#totalAmount").val()) - Number($("#discount").val());
+ 		grandTotal = Number($("#totalAmount").val()) - (Number($("#totalAmount").val()) * (Number($("#discount").val()) / 100) );
  		grandTotal = grandTotal.toFixed(2);
 
  		$("#grandTotal").val(grandTotal);

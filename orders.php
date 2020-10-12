@@ -70,17 +70,23 @@ if($_GET['o'] == 'add') {
 			    </div>
 			  </div> <!--/form-group-->
 			  <div class="form-group">
-			    <label for="clientName" class="col-sm-2 control-label">Customer Name</label>
+				<label for="clientName" class="col-sm-2 control-label">Choose Vender:</label>
+				<div class="col-sm-10">
+				<select class="form-control" id="clientName" name="clientName">
+					<option>SELECT</option>
+					<option value="SWIGGY">SWIGGY</option>
+					<option value="UBER EATS">UBER EATS</option>
+					<option value="COUNTER">CONTER</option>
+				</select>
+				</div>
+				</div> 
+			   <div class="form-group">
+			    <label for="clientContact" class="col-sm-2 control-label">Client Name</label>
 			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="clientName" name="clientName" placeholder="Client Name" autocomplete="off" />
+			      <input type="text" class="form-control" id="clientContact" name="clientContact" placeholder="Client Name" autocomplete="off" />
 			    </div>
-			  </div> <!--/form-group-->
-			  <div class="form-group">
-			    <label for="clientContact" class="col-sm-2 control-label">Client Contact</label>
-			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="clientContact" name="clientContact" placeholder="Contact Number" autocomplete="off" />
-			    </div>
-			  </div> <!--/form-group-->			  
+			  </div>  
+			   <!--/form-group-->			  
 
 			  <table class="table" id="productTable">
 			  	<thead>
@@ -115,14 +121,17 @@ if($_GET['o'] == 'add') {
 		  						</select>
 			  					</div>
 			  				</td>
-			  				<td style="padding-left:20px;">			  					
+			  				<td style="padding-left:20px;">		
+							   					
 			  					<input type="text" name="rate[]" id="rate<?php echo $x; ?>" autocomplete="off" disabled="true" class="form-control" />			  					
-			  					<input type="hidden" name="rateValue[]" id="rateValue<?php echo $x; ?>" autocomplete="off" class="form-control" />			  					
+			  					<input type="hidden" name="rateValue[]" id="rateValue<?php echo $x; ?>" autocomplete="off" class="form-control" />	
+							  
 			  				</td>
 							<td style="padding-left:20px;">
-			  					<div class="form-group">
-									<p id="available_quantity<?php echo $x; ?>"></p>
-			  					</div>
+			  					
+									<input Type="text" name="available_quantity[]" id="available_quantity<?php echo $x; ?>" autocomplete="off" disabled="true" class="form-control" />
+									<input Type="hidden" name="available_quantity[]" id="available_quantity<?php echo $x; ?>" autocomplete="off" disabled="true" class="form-control" />
+			  					
 			  				</td>
 			  				<td style="padding-left:20px;">
 			  					<div class="form-group">
@@ -162,7 +171,7 @@ if($_GET['o'] == 'add') {
 				    </div>
 				  </div> <!--/form-group-->			  
 				  <div class="form-group">
-				    <label for="discount" class="col-sm-3 control-label">Discount</label>
+				    <label for="discount" class="col-sm-3 control-label">Discount in %</label>
 				    <div class="col-sm-9">
 				      <input type="text" class="form-control" id="discount" name="discount" onkeyup="discountFunc()" autocomplete="off" />
 				    </div>
