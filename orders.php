@@ -180,21 +180,21 @@ if($_GET['o'] == 'add') {
 				    <div class="col-sm-9">
 				      <input type="text" class="form-control" id="discount" name="discount" onkeyup="discountFunc()" autocomplete="off" />
 				    </div>
-				  </div> <!--/form-group-->	
-				  <div class="form-group">
-				    <label for="grandTotal" class="col-sm-3 control-label">Grand Total</label>
-				    <div class="col-sm-9">
-				      <input type="text" class="form-control" id="grandTotal" name="grandTotal" disabled="true" />
-				      <input type="hidden" class="form-control" id="grandTotalValue" name="grandTotalValue" />
-				    </div>
-				  </div> <!--/form-group-->	
+				  </div> <!--/form-group-->
 				  <div class="form-group">
 				    <label for="vat" class="col-sm-3 control-label gst">GST 18%</label>
 				    <div class="col-sm-9">
 				      <input type="text" class="form-control" id="vat" name="gstn" readonly="true" />
 				      <input type="hidden" class="form-control" id="vatValue" name="vatValue" />
 				    </div>
-				  </div>	  		  
+				  </div>
+				  <div class="form-group">
+				    <label for="grandTotal" class="col-sm-3 control-label">Grand Total</label>
+				    <div class="col-sm-9">
+				      <input type="text" class="form-control" id="grandTotal" name="grandTotal" disabled="true" />
+				      <input type="hidden" class="form-control" id="grandTotalValue" name="grandTotalValue" />
+				    </div>
+				  </div> <!--/form-group-->		  		  
 			  </div> <!--/col-md-6-->
 
 			  <div class="col-md-6">
